@@ -10,4 +10,7 @@ void    c_remove_matrix(matrix_t *A)
 
     /* free cols */
     free(A->matrix);
+    A->rows = 0;
+    A->columns = 0;
+
 }
