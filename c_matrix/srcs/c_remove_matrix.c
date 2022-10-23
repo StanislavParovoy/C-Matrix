@@ -1,4 +1,4 @@
-#include "c_matrixl.h"
+#include "c_matrix.h"
 
 
 void    c_remove_matrix(matrix_t *A)

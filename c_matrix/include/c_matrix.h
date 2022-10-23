@@ -31,6 +31,8 @@ typedef struct matrix_struct
 int     c_create_matrix(const int rows, const int columns, matrix_t *result);
 void    c_remove_matrix(matrix_t *A);
 int     c_eq_matrix(matrix_t *A, matrix_t *B);
+int     c_sum_matrix(matrix_t *A, matrix_t *B, matrix_t *result);
+int     c_sub_matrix(matrix_t *A, matrix_t *B, matrix_t *result);
 
 
 
