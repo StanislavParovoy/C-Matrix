@@ -1,7 +1,8 @@
 #include "c_matrix.h"
 
 /*
-**
+** matrix_t    *c_mult_number(matrix_t *A, double number)
+** Умножение матрциы на число
 **
 **
 */

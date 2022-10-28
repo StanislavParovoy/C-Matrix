@@ -1,8 +1,8 @@
 #include "c_matrix.h"
 
 /*
-**
-**
+** matrix_t* c_sub_matrix(matrix_t *A, matrix_t *B)
+** Вычитание матриц
 **
 */
 

@@ -1,8 +1,9 @@
 #include "c_matrix.h"
 
 /*
+** matrix_t* c_sum_matrix(matrix_t *A, matrix_t *B)
 **
-**
+** Сложение матриц
 **
 */
 

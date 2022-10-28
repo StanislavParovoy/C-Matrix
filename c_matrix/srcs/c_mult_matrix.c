@@ -1,9 +1,9 @@
 #include "c_matrix.h"
 
 /*
-**
-**
-**
+** c_mult_matrix(matrix_t *A, matrix_t *B)
+** Матричное умножение
+** RETURN A * B
 */
 
 static int is_correct(matrix_t *A)
