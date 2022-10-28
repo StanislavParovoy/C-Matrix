@@ -11,13 +11,16 @@ static int is_correct(matrix_t *A)
     return (A && A->rows > 0 && A->columns > 0);
 }
 
-int     c_mult_number(matrix_t *A, double number, matrix_t *result)
+matrix_t    *c_mult_number(matrix_t *A, double number)
 {
-    if (!is_correct(A))
-        return (INCORRECT_MATRIX);
+    matrix_t    *result;
 
-    if (c_create_matrix(A->rows, A->columns, result) != OK)
-        return (MALLOC_FAILED);
+    if (!is_correct(A))
+        return (NULL);
+
+    result = c_create_matrix(A->rows, A->columns);
+    if (result == NULL)
+        return (NULL);
 
     for (int i = 0; i < A->rows; i++)
     {
@@ -26,5 +29,5 @@ int     c_mult_number(matrix_t *A, double number, matrix_t *result)
             result->matrix[i][j] = A->matrix[i][j] * number;
         }
     }
-    return OK;
+    return (result);
 }

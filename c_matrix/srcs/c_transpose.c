@@ -6,10 +6,13 @@
 **
 */
 
-int c_transpose(matrix_t *A, matrix_t *result)
+matrix_t*   c_transpose(matrix_t *A)
 {
-    if (c_create_matrix(A->columns, A->rows, result) != OK)
-        return (MALLOC_FAILED);
+    matrix_t    *result;
+
+    result = c_create_matrix(A->columns, A->rows);
+    if (result == NULL)
+        return (NULL);
 
     for (int i = 0; i < A->rows; i++)
     {
@@ -18,5 +21,5 @@ int c_transpose(matrix_t *A, matrix_t *result)
             result->matrix[j][i] = A->matrix[i][j];
         }
     }
-    return (OK);
+    return (result);
 }

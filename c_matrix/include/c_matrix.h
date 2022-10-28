@@ -28,17 +28,18 @@ typedef struct matrix_struct
 }               matrix_t;
 
 
-int     c_create_matrix(const int rows, const int columns, matrix_t *result);
-void    c_remove_matrix(matrix_t *A);
-int     c_eq_matrix(matrix_t *A, matrix_t *B);
-int     c_sum_matrix(matrix_t *A, matrix_t *B, matrix_t *result);
-int     c_sub_matrix(matrix_t *A, matrix_t *B, matrix_t *result);
-int     c_mult_number(matrix_t *A, double number, matrix_t *result);
-int     c_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result);
-int     c_transpose(matrix_t *A, matrix_t *result);
-int     c_calc_complements(matrix_t *A, matrix_t *result);
-int     c_determinant(matrix_t *A, double *result);
-int     c_inverse_matrix(matrix_t *A, matrix_t *result);
+matrix_t*   c_create_matrix(const int rows, const int columns);
+void        c_remove_matrix(matrix_t *A);
+int         c_eq_matrix(matrix_t *A, matrix_t *B);
+
+matrix_t*   c_sum_matrix(matrix_t *A, matrix_t *B);
+matrix_t*   c_sub_matrix(matrix_t *A, matrix_t *B);
+matrix_t*   c_mult_number(matrix_t *A, double number);
+matrix_t*   c_mult_matrix(matrix_t *A, matrix_t *B);
+matrix_t*   c_transpose(matrix_t *A);
+int         c_calc_complements(matrix_t *A, matrix_t *result);
+int         c_determinant(matrix_t *A, double *result);
+int         c_inverse_matrix(matrix_t *A, matrix_t *result);
 
 
 #endif 

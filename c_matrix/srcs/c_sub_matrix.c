@@ -11,16 +11,19 @@ static int is_correct(matrix_t *A)
     return (A && A->rows > 0 && A->columns > 0);
 }
 
-int c_sub_matrix(matrix_t *A, matrix_t *B, matrix_t *result)
+matrix_t* c_sub_matrix(matrix_t *A, matrix_t *B)
 {
+    matrix_t    *result;
+
     if (!is_correct(A) || !is_correct(B))
-        return (INCORRECT_MATRIX);
+        return (NULL);
 
     if (A->rows != B->rows || A->columns != B->columns)
-        return (CALC_ERROR);
+        return (NULL);
 
-    if (c_create_matrix(A->rows, A->columns, result) != OK)
-        return (MALLOC_FAILED);
+    result = c_create_matrix(A->rows, A->columns);
+    if (result == NULL)
+        return (NULL);
 
     for (int i = 0; i < A->rows; i++)
     {
@@ -29,5 +32,5 @@ int c_sub_matrix(matrix_t *A, matrix_t *B, matrix_t *result)
             result->matrix[i][j] = A->matrix[i][j] - B->matrix[i][j];
         }
     }
-    return (OK);
+    return (result);
 }
